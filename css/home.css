@@ -2,6 +2,7 @@ body {
     background-image:url('../images/fondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Prompt', sans-serif;
 }
 
