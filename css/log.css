@@ -43,6 +43,22 @@ form .email{
     outline: none ;
 }
 
+form .name{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.name input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none ;
+}
+
 form .password{
     position: relative;
     border-bottom: 2px solid #adadad;
