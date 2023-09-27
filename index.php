@@ -16,7 +16,7 @@
             <div class="seccion-tarea">
                 <h3>Estas son tus Tareas Pendientes </h3>
                 <table>                    
-                    <?php include "php/mostrarTareas.php"?>
+                    <?php/* include "php/mostrarTareas.php"*/?>
                 </table>
             </div>  
         </form> 

@@ -4,23 +4,14 @@
     $pass = $_POST["pass"];    
     $email = $_POST["email"];    
 
-    $sql = "SELECT * FROM usuarios";
-    $result = $connec->query($sql);
-    $dato = $result->fetch_assoc();
-    foreach ($dato as $value) {
-        echo $value;echo "<br>";
-    }
-
-    /*if ($result->num_rows()<1) {
-        # code...
-    }
-    
-    
-    if ($result->num_rows > 0 ) {
-        /*$sesionUsuario = $stmt->fetch_assoc();
+    $sql = "SELECT * FROM usuarios where email = '$email' and contraseña = '$pass'";
+    $respuesta= $connec->query($sql);           
+        
+    if ($respuesta->num_rows > 0) {
+        $sesionUsuario = $respuesta->fetch_assoc();
         $_SESSION['name'] = $sesionUsuario['name'];
         $_SESSION['email'] = $sesionUsuario['email'];
-        $_SESSION['id'] = $sesionUsuario['id'];*//*
+        $_SESSION['id'] = $sesionUsuario['id'];        
         header("Location: ../index.php");
     } else {        
         echo '<script>
@@ -29,6 +20,6 @@
         </script>';
         
     }
-   */
+   
 ?>
 
