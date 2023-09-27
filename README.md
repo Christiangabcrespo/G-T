@@ -1,1 +1,1 @@
-# G-T
+# G-T proyecto de: jhonny nina, christan crespo, agustin santana. estudiantes de ETN 26 "confederacion suiza", 6to año.
