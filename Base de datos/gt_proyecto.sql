@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2023 a las 18:20:35
+-- Tiempo de generación: 04-10-2023 a las 09:36:02
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -33,6 +33,15 @@ CREATE TABLE `tareas` (
   `id_usuario` int(11) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tareas`
+--
+
+INSERT INTO `tareas` (`id`, `tarea`, `id_usuario`, `fecha`) VALUES
+(4, 'dormir una siesta ', 1, '2023-10-16 00:00:00'),
+(5, 'hacer pizza ', 1, '2023-10-24 00:00:00'),
+(6, 'Hacer un cuento', 3, '2023-10-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -81,7 +90,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `tareas`
 --
 ALTER TABLE `tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

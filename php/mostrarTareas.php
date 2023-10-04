@@ -14,4 +14,4 @@ if (isset($_SESSION['name'], $_SESSION['email'], $_SESSION['id'])) {
         }
         echo "</table>";
     }
-?>
+?> 
