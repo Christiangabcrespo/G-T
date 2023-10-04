@@ -21,7 +21,7 @@ session_start();
         echo '<a href="login.php" class="log">Iniciar Sesión</a>';
     } else {
         // El usuario está logueado, muestra el botón de "Cerrar sesión"
-        echo '<a href="cerrarsesion.php" class="log">Cerrar Sesión</a>';
+        echo '<a href="php/cerrarsesion.php" class="log">Cerrar Sesión</a>';
     }
 ?>
 
@@ -32,11 +32,12 @@ session_start();
                 <input type="date" name="fecha">
                 <input type="submit" class="boton" value="agregar">
             </div>
+        </form> 
             <div class="seccion-tarea">
                 <h3>Estas son tus Tareas Pendientes </h3>
                 <?php
                     // Incluye el archivo de conexión a la base de datos
-                    require 'php/conexionBD.php';
+                    include 'php/conexionBD.php';
 
                     // Verifica si el usuario ha iniciado sesión (en este caso, verifica si existe una sesión con el nombre 'name')
                     if (!empty($_SESSION['name'])) {
@@ -55,7 +56,7 @@ session_start();
                                 echo "<tr>";
                                 echo "<td>" . $row['tarea'] . "</td>";
                                 echo "<td>" . $row['fecha'] . "</td>";
-                                echo "<td><form action='eliminarTareas.php' method='post'>";
+                                echo "<td><form action='php/eliminarTareas.php' method='post'>";
                                 echo "<input type='hidden' name='tarea_id' value='" . $row['id'] . "'>";
                                 echo "<input type='submit' value='Eliminar'>";
                                 echo "</form></td>";
@@ -71,12 +72,13 @@ session_start();
                         $connec->close();
                     } else {
                         // El usuario no ha iniciado sesión, muestra un mensaje o redirige a la página de inicio de sesión
-                        echo "Debes iniciar sesión para ver los datos.";
-                        // Puedes agregar aquí un enlace para redirigir al usuario a la página de inicio de sesión
+                        //echo "Debes iniciar sesión para ver los datos.";
+                        $texto = "Debes iniciar sesión para ver los datos.";
+                        echo '<span class="error-message">' . $texto . '</span>';
                     }
                 ?>
                     </div>  
-        </form> 
+        
     </div>
 </body>
 </html>
